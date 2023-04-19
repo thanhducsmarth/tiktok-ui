@@ -5,7 +5,6 @@
 }
 
 .container {
-    background-color: #333;
     width: var(--default-layout-header);
     height: 1000px;
     display: flex;
@@ -13,7 +12,6 @@
 
 .content {
     flex: 1;
-    background-color: rgb(155, 155, 155);
     height: 100%;
 }
 

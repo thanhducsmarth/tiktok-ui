@@ -1,4 +1,8 @@
 .wrapper {
+    --border-search: 92px;
+    --search-height: 46px;
+    --search-top-spacer: 9px;
+    --button-width: 52px;
     top: 0;
     right: 0;
     left: 0;
@@ -6,6 +10,8 @@
     display: flex;
     justify-content: center;
     height: var(--default-layout-header-height);
+    width: 100%;
+    margin-bottom: 50px;
 }
 
 .inner {
@@ -14,4 +20,77 @@
     display: flex;
     align-items: center;
     padding: 0 15px;
+    justify-content: space-between  ;
+}
+
+.search, .search-result {
+    width: 361px;
+}
+
+.search {
+    position: relative;
+    width: 361px;
+    height: var(--search-height);
+    border-radius: var(--border-search);
+    padding-left: 16px;
+    display: flex;
+    background-color: rgba(22, 24, 35, 0.06);
+    border: 1.5px solid transparent;
+    input {
+        flex: 1;
+        height: 100%;
+        color: var(--color-input);
+        font-size: 1.6rem;
+        background-color: transparent;
+        caret-color: var(--primary);
+    }
+
+    input:not(:placeholder-shown) ~ .search-btn{
+        color: rgba(22, 24, 35, 0.75);
+    }
+
+    .search-btn {
+        border-top-right-radius: var(--border-search);
+        border-bottom-right-radius: var(--border-search);
+        width: var(--button-width);
+        height: 100%;
+        font-size: 1.8rem;
+        color: rgba(22, 24, 35, 0.34);
+        &:hover {
+            background-color: rgba(22, 24, 35, 0.03);
+        }
+
+        &:active {
+            cursor: pointer;
+            background-color: rbga(22, 24, 35, 0.06);
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: calc(var(--search-height) - var(--search-top-spacer)*2);
+        width: 1px;
+        top: var(--search-top-spacer);
+        right: var(--button-width);
+        background-color: rgba(22, 24, 35, 0.12);
+    }
+
+    &:focus-within {
+        border-color:rgba(22, 24, 35, 0.2);
+    }
+}
+
+.clear, .loading {
+    position: absolute;
+    right: calc(var(--button-width) + 16px);
+    top: 50%;
+    transform: translateY(-50%);
+    color:rgba(22, 24, 35, 0.34);
+}
+
+.search-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba(22, 24,35,0.5);
 }
