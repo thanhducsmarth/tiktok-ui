@@ -7,6 +7,7 @@
     --default-layout-header-height: 60px;
     --color-input: #000;
     --color-text: #333;
+    --white: #fff;
 }
 
 * {
@@ -33,4 +34,5 @@ button, input, [tabindex] {
 
 a[href] {
     color: var(--color-text);
+    text-decoration: none;
 }
