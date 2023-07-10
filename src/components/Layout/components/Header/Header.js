@@ -47,14 +47,14 @@ function Header() {
                         <FontAwesomeIcon icon={faCircleXmark} />
                     </button>
                         <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
-                        <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
+                    <button className={cx('search-btn')}>
+                        <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    </button>
                 </div>
             </Tippy>
             <div className={cx('actions')}>
                 <Button text>Up load</Button>
-                <Button primary>Log in</Button>
+                <Button primary disabled onClick={() =>alert(('Clicked'))}>Log in</Button>
             </div>
         </div>
     </header>

@@ -6,6 +6,7 @@ const cx = classNames.bind(styles);
 
 function Button({
     to, 
+    disabled, 
     href, 
     children, 
     primary=false, 
@@ -20,6 +21,10 @@ function Button({
         onClick,
         ...passProps,
     };
+
+    if(disabled) {
+
+    }
 
     if (to) {
         props.to = to
