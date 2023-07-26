@@ -2,12 +2,13 @@ import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import images from '~/assets/images';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark,faSpinner,faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark,faSpinner,faMagnifyingGlass, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import { useEffect, useState } from 'react';
 import {Wrapper as PoperWrapper} from '~/components/Poper';
 import AccountItems from '~/components/AccountItem';
 import Button from '~/components/Button/Button';
+import Menu from '~/components/Poper/Menu';
 // import 'tippy.js/dist/tippy.css'; // optional
 
 const cx = classNames.bind(styles)
@@ -31,12 +32,11 @@ function Header() {
                 render={attrs => (
                     <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                         <PoperWrapper>
-                            <h4 className={cx('search-title')}>
+                            <h4 className={cx('search-title')}>Accounts</h4>
                                 <AccountItems/>
                                 <AccountItems/>
                                 <AccountItems/>
                                 <AccountItems/>
-                            </h4>
                         </PoperWrapper>
                     </div>
                 )}
@@ -55,6 +55,12 @@ function Header() {
             <div className={cx('actions')}>
                 <Button text>Up load</Button>
                 <Button primary disabled onClick={() =>alert(('Clicked'))}>Log in</Button>
+
+                <Menu>
+                    <button className={cx('more-btn')}>
+                        <FontAwesomeIcon icon={faEllipsisVertical} />
+                    </button>
+                </Menu>
             </div>
         </div>
     </header>
