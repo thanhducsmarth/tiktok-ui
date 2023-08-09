@@ -9,7 +9,7 @@ import {Wrapper as PoperWrapper} from '~/components/Poper';
 import AccountItems from '~/components/AccountItem';
 import Button from '~/components/Button/Button';
 import Menu from '~/components/Poper/Menu';
-// import 'tippy.js/dist/tippy.css'; // optional
+import 'tippy.js/dist/tippy.css'; // optional
 
 const cx = classNames.bind(styles)
 
@@ -54,7 +54,8 @@ function Header() {
             </Tippy>
             <div className={cx('actions')}>
                 <Button text>Up load</Button>
-                <Button primary disabled onClick={() =>alert(('Clicked'))}>Log in</Button>
+                <Button rounded>Log in</Button>
+                <Button outline>Account</Button>
 
                 <Menu>
                     <button className={cx('more-btn')}>

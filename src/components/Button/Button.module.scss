@@ -14,8 +14,10 @@
 }
 
 .primary {
+    border-radius: 999px;
     background-color: var(--primary);
     color: var(--white);
+    border-color: var(--primary);
 
     &:hover {
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), var(--primary);
@@ -23,6 +25,7 @@
 }
 
 .outline {
+    border-radius: 999px;
     color: var(--primary);
     border-color: currentColor;
 
@@ -32,10 +35,20 @@
 }
 
 .text {
-
     &:hover {
         text-decoration: underline;
         transition: 0.5s ease;
+    }
+}
+
+.rounded {
+    border-radius: 999px;
+    box-shadow: 0 2px 8px rgba(0 0 0 / 6%);
+    border-color: rgba(22,24,35,0.12);
+
+    &:hover {
+        border-color: rgba(22,24,35,0.2);
+        background-color: rgba(22,24,35,0.03);
     }
 }
 

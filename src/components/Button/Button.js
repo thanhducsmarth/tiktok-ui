@@ -8,14 +8,17 @@ function Button({
     to, 
     disabled, 
     href, 
-    children, 
     primary=false, 
     outline=false, 
+    text = false,
+    rounded = false, 
     small = false, 
     large = false, 
-    text = false,
+    children, 
+    className,
     onClick, 
-    passProps}) {
+    ...passProps
+}) {
     let Comp = 'button';
     const props = {
         onClick,
@@ -23,7 +26,11 @@ function Button({
     };
 
     if(disabled) {
-
+        Object.keys(props).forEach(key => {
+            if(key.startsWith('on') && typeof props[key] === 'function') {
+                delete props[key];
+            }
+        });
     }
 
     if (to) {
@@ -34,12 +41,15 @@ function Button({
         Comp = 'a';
     }
     const classes = cx('wrapper', {
+        className,
         primary,
         outline,
         small,
         large,
+        rounded,
         text,
     })
+    
     return (
     <Comp className={classes} {...props}>
         <span>{children}</span>
